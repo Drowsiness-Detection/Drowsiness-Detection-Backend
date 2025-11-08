@@ -18,7 +18,7 @@
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer/>	
 	</developers>
 	<scm>
 		<connection/>
@@ -34,6 +34,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>3.5.7</version>
+</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
