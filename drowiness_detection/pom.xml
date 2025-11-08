@@ -61,6 +61,11 @@
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 
+<dependency>
+  <groupId>com.h2database</groupId>
+  <artifactId>h2</artifactId>
+  <scope>runtime</scope>
+</dependency>
 
 	</dependencies>
 
@@ -74,26 +79,8 @@
             </configuration>
         </plugin>
 
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>docker-maven-plugin</artifactId>
-            <version>1.0.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>build</goal> <!-- Build Docker image-->
-                        <goal>push</goal>  <!-- Đẩy Docker image lên Docker Hub (nếu cần) -->
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <imageName>com.khbc/drowsiness-detection</imageName> <!-- Tên image Docker -->
-                <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory> <!-- Đường dẫn Dockerfile -->
-                <buildArgs>
-                    <ARG>VERSION=1.0</ARG> 
-                </buildArgs>
-            </configuration>
-        </plugin>
+
+
     </plugins>
 </build>
 
