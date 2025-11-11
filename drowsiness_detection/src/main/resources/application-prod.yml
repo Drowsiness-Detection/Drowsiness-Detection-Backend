@@ -2,24 +2,17 @@ server:
   port: ${PORT:8080}
 
 spring:
-  datasource:
-    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
-  jpa:
-    hibernate.ddl-auto: validate
-    open-in-view: false
-  flyway.enabled: true
-
-management:
-  endpoints.web.exposure.include: health,prometheus
-  endpoint.health.show-details: never
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
 
 app:
   infer:
     base-url: ${INFER_BASE_URL}
     endpoint: /infer/drowsiness
     timeout-ms: 3000
+
+    ttlDays: 90
   ws:
     path: /ws/drowsiness
     allowed-origins: ${WS_ALLOWED_ORIGINS:https://your-fe.example}

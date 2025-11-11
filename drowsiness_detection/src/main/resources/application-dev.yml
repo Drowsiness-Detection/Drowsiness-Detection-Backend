@@ -1,18 +1,6 @@
 server:
   port: 8080
 
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/drowsy
-    username: postgres
-    password: postgres
-  jpa:
-    hibernate.ddl-auto: validate
-    properties.hibernate.format_sql: true
-  flyway.enabled: true
-
-management.endpoints.web.exposure.include: health,prometheus
-
 app:
   infer:
     base-url: http://localhost:8000
@@ -24,3 +12,9 @@ app:
     max-text-bytes: 262144
     max-binary-bytes: 1048576
     ping-interval-ms: 30000
+    ttlDays: 30
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/drowsiness
